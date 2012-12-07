@@ -1,8 +1,25 @@
 #
-# LZ77 Compression / Decompression
+# GZIP Decompression
 #
-# Author : Guillaume Canu
-# based on RFC 1952 (http://tools.ietf.org/html/rfc1952)
+# Copyright (c) Guillaume Canu (https://github.com/gcanu/gzip.js)
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+# Version : 0.1a
+# Documentation : RFC 1951 (http://tools.ietf.org/html/rfc1951)
+#                 RFC 1952 (http://tools.ietf.org/html/rfc1952)
 #
 
 (() ->
@@ -350,22 +367,4 @@
     # return decompressed text      
     text
     
-  
-    
-  # test
-  fr = new FileReader()
-  fr.onload = ((e) ->
-    result = document.getElementById "result"
-    result.innerHTML = "<textarea>#{decompress e.target.result}</textarea>"
-  )
-  
-  input = document.getElementById "upload"
-  input.onchange = ((e) -> 
-    el = e.target
-    if el.files.length > 0
-      fr.readAsBinaryString el.files[0]
-    null
-  )
-  null
-      
 )()
