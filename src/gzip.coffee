@@ -22,9 +22,7 @@
 #                 RFC 1952 (http://tools.ietf.org/html/rfc1952)
 #
 
-(() ->
-
-  decompress = (cText) ->
+window.decompress = (cText) ->
     
     ##
     ## VARIABLES INITIALIZATION
@@ -366,5 +364,3 @@
 
     # return decompressed text      
     text
-    
-)()
